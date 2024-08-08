@@ -58,16 +58,20 @@ Should return:
 |1 |Jen |40 |NY |
 |3 |Tom |30 |GA |
 
-### Operators for using `WHERE` with text data
-
-| Operator              | Condition                               |
-| --------------------- | --------------------------------------- |
-| = , !=, <>            | Case sensitive                          |
-| LIKE/NOT LIKE         | Case insensitive                        |
-| IN(...) / NOT IN(...) | String does or does not exist in a list |
-
 <p>&nbsp;</p>
 
+### Operators for using `WHERE` with text data
+
+| Operator                         | Condition                               |
+| -------------------------------- | --------------------------------------- |
+| = , !=, <>                       | Case sensitive                          |
+| LIKE/NOT LIKE                    | Case insensitive                        |
+| IN(...) / NOT IN(...)            | String does or does not exist in a list |
+| BETWEEN x AND y (no parentheses) | Item falls between the two given values |
+
+**<> is the same as !=**
+
+<p>&nbsp;</p>
 
 ### Like
 
@@ -80,31 +84,49 @@ Should return:
 
 <p>&nbsp;</p>
 
+## Mathematical Functions
 
+**Functions that work with various databases**
+**ABS(x)**: returns the absolute value of x
+**SIGN(x)**: returns the sign of input x as -1, 0, or 1 (negative, zero, or positive respectively)
+**MOD(x,y)**: modulo – returns the integer remainder of x divided by y (same as x%y)
+**FLOOR(x)**: returns the largest integer value that is less than or equal to x
+**CEILING(x)** or **CEIL(x)**: returns the smallest integer value that is greater than or equal to x
+**POWER(x,y)**: returns the value of x raised to the power of y
+**ROUND(x)**: returns the value of x rounded to the nearest whole integer
+**ROUND(x,d)**: returns the value of x rounded to the number of decimal places specified by the value d
+**SQRT(x)**: returns the square-root value of x
 
-## Filtering and Sorting Results 
+<p>&nbsp;</p>
+
+## Filtering and Sorting Results
+
 - Use the `DISTINCT` keyword to remove rows that have the same column value. In other words, it removes duplicates from the results. The keyword comes right after `SELECT`
-- Use `ORDER BY` to sort by a specific column 
-- Use `LIMIT` to only return 'x' number of results 
-- Use `OFFSET` to tell SQL where to begin counting the rows 
+- Use `ORDER BY` to sort by a specific column
+- Use `LIMIT` to only return 'x' number of results
+- Use `OFFSET` to tell SQL where to begin counting the rows
 - `LIMIT` and `OFFSET` are typically written at the end of a query
 
 <p>&nbsp;</p>
 
+---
+
 ## 🔥 JOIN ☠️
-Most real-world data is stored across multiple related tables. Tables sharing information about the same object have to use ***primary keys*** to keep up with unique entities. 
+
+Most real-world data is stored across multiple related tables. Tables sharing information about the same object have to use **_primary keys_** to keep up with unique entities.
 
 The most commonly used primary key is an auto-incrementing integer (starts at one, increases by one for each row added.)
 
 <p>&nbsp;</p>
 
 ### Types of `JOIN`
+
 1. `INNER JOIN`
 2. `LEFT JOIN`
 3. `RIGHT JOIN`
 4. `FULL JOIN`
 
-LEFT, RIGHT, and FULL JOIN are used when data is asymmetrical... when it doesn't exactly line up in every table, or when some information is missing. 
+LEFT, RIGHT, and FULL JOIN are used when data is asymmetrical... when it doesn't exactly line up in every table, or when some information is missing.
 
 ### How I currently understand `INNER JOIN`
 
@@ -141,13 +163,15 @@ So we use `ON` to point out the two lines of data that represent the same thing.
 <p>&nbsp;</p>
 
 ## Aggregate Functions
+
 **Common Aggregate Functions**
+
 1. `COUNT`
-2.  `MIN` / `MAX`
+2. `MIN` / `MAX`
 3. `AVG`
 4. `SUM`
 
-`GROUP BY` allows you to group rows together that have the same value in one of the columns. 
+`GROUP BY` allows you to group rows together that have the same value in one of the columns.
 
 ## Case
 
@@ -176,7 +200,8 @@ rest of code...
 
 <p>&nbsp;</p>
 
-## Order of Execution 
+## Order of Execution
+
 1. `FROM` and `JOIN`
 2. `WHERE`
 3. `GROUP BY`
