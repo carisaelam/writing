@@ -5,7 +5,7 @@
     <img class="profile__pic" src="assets/profile-pic.png">
     <div class="connect__links">
       <a href="https://github.com/carisaelam">GitHub</a>
-      <a href="www.linkedin.com/in/carisa-elam-097368239">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/carisa-elam-097368239">LinkedIn</a>
     </div>
   </div>
 </div>
