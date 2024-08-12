@@ -1,3 +1,7 @@
+**[Ultimate Markdown Cheat Sheet](https://github.com/lifeparticle/Markdown-Cheatsheet)**
+
+**[Markdown Guide](https://markdownguide.offshoot.io/basic-syntax/)**
+
 **Single backtick prints inline code**
 
 I'm some normal text
@@ -36,3 +40,8 @@ If it isn't working by just hitting enter and making extra rows, you can use thi
 `<p>&nbsp;</p>`
 
 <p>&nbsp;</p>
+
+
+**Block Quotes**
+`> I'm learning block quotes` 
+> I'm learning block quotes
