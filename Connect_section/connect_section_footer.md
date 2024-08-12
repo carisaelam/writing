@@ -23,6 +23,10 @@
   margin-top: 1rem; 
 }
 
+a {
+  font-weight: bold; 
+}
+
 .profile__pic {
   max-width: 7rem;
   border-radius: 100%; 
@@ -33,6 +37,5 @@
   flex-direction: column; 
   gap: .5rem; 
   justify-content: center; 
-  font-weight: bold; 
 }
 </style>
