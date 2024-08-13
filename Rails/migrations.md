@@ -1,4 +1,4 @@
-# Rails Migrations
+# Beginner–Friendly Basics: Rails Migrations
 
 ### Helpful terms
 
@@ -104,22 +104,36 @@ $ rails db:migrate
 
 and voila! Your database table has been created, updated, deleted, etc.
 
+**How do I know the migration was successful?**
+Upon completion, the migration should output something like this: 
+```CLI
+==  CreateArticles: migrating =================================================
+-- create_table(:articles)
+   -> 0.0030s
+==  CreateProducts: migrated (0.0030s) ========================================
+
+```
+
+
 **What if I mess up something?**
 Undo! Migrations are typically reversible, and it's almost as easy as `Ctrl–Z`! You simply run
 `CLI $ rails db:rollback` and your migration effectively gets "undone." There's more to it than that under the hood, but as long as you have specified how each method should "reverse" itself, Rails handles the rest.
 
 ### What else can migrations do?
 
-**Create a primary key for your table**
+**Do I need to reserve the first column for a primary key?**
 Typically, the first column in a table is reserved for the "id" or for something that will serve as a completely unique identifier for each row of the table. By default, a newly created database table in Rails will automatically include an auto-incrementing primary key "id" column. So no need to do that yourself! You won't really "see" that anywhere in the code, you just have to hop on the Rails train and understand that it is happening behind the scenes.
 
-**Create join tables**
-Let's say we have a `comments` table we want to join with our `articles` data in meaningful ways. We can run 
-```CLI
-create_join_table :articles, :comments
-```
+**What else can you use migrations for?**
+Migrations are used in a ton of processes within a Rails app. This goes a bit beyond the scope of this article, but here are several other operations that use migrations: 
+- Creating join tables 
+- Changing current tables
+- Changing current columns
+- Adding column modifiers (`comment`, `default`, `limit`, etc.)
+- Creating foreign key columns to connect tables
+- Execute custom SQL commands (for when the built-in functions just aren't enough)
 
-and will end up with an `articles_comments` table with columns called `article_id` and `comment_id`. 
+
 
 ### Helpful Links
 
